@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt --hostname 0.0.0.0 --port 3000",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
@@ -12,5 +12,8 @@
     "core-js": "^3.37.1",
     "nuxt": "^2.18.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^7.0.0-beta.0",
+    "tailwindcss": "^4.1.7"
+  }
 }
