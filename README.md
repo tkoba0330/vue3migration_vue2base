@@ -17,6 +17,9 @@
 
 ### Docker環境での実行
 ```bash
+# vue3migration_vue2base ディレクトリに移動してから実行してください
+cd vue3migration_vue2base
+
 # Docker Composeでコンテナを起動
 docker-compose up -d
 
@@ -29,14 +32,17 @@ docker-compose up
 
 ### 個別Dockerコマンド
 ```bash
+# 以下のコマンドは vue3migration_vue2base ディレクトリ内で実行することを想定しています
+# cd vue3migration_vue2base
+
 # Dockerイメージのビルド
-docker build -t nuxt-migration-test .
+# docker build -t nuxt-migration-test .
 
 # コンテナの起動
-docker run -p 3000:3000 -v $(pwd):/app nuxt-migration-test
+# docker run -p 3000:3000 -v $(pwd):/app nuxt-migration-test
 
 # 開発モードでの起動（ボリュームマウント）
-docker run -p 3000:3000 -v $(pwd):/app -it nuxt-migration-test npm run dev
+# docker run -p 3000:3000 -v $(pwd):/app -it nuxt-migration-test npm run dev
 ```
 
 ## 📁 プロジェクト構造（Nuxt v2 ベース）
@@ -185,7 +191,7 @@ vue3migration_vue2base/
 
 ## 🛠️ Docker開発コマンド
 
-### 基本操作
+### 基本操作 (まず `cd vue3migration_vue2base` を実行してください)
 ```bash
 # コンテナの起動
 docker-compose up -d
@@ -200,7 +206,7 @@ docker-compose restart
 docker-compose logs -f nuxt
 ```
 
-### 開発コマンド（Docker内）
+### 開発コマンド（Docker内） (まず `cd vue3migration_vue2base` を実行してください)
 ```bash
 # 開発サーバー起動
 docker-compose exec nuxt npm run dev
@@ -227,7 +233,7 @@ docker-compose exec nuxt npm install
 docker-compose exec nuxt npm install <package-name>
 ```
 
-### Docker環境のメンテナンス
+### Docker環境のメンテナンス (まず `cd vue3migration_vue2base` を実行してください)
 ```bash
 # イメージの再ビルド
 docker-compose build --no-cache
@@ -244,7 +250,7 @@ docker-compose exec nuxt sh
 
 ## 🐳 Docker設定
 
-### Dockerfile（Nuxt v2用）
+### Dockerfile（`vue3migration_vue2base/Dockerfile`）
 ```dockerfile
 FROM node:18-alpine
 
@@ -266,7 +272,7 @@ EXPOSE 3000
 CMD ["npm", "run", "dev"]
 ```
 
-### docker-compose.yml
+### docker-compose.yml（`vue3migration_vue2base/docker-compose.yml`）
 ```yaml
 version: '3.8'
 

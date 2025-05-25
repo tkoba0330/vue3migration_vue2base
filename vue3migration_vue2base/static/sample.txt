@@ -1,0 +1,2 @@
+This is a sample static text file.
+It will be served from the root path.
